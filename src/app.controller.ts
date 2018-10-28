@@ -12,16 +12,16 @@ class CreateCatDto {
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get(':id')
+  @Get(':id/:page/:count')
   sss(@Req() request, @Body() body, @Param() param, @Query() query, @Headers() headers): string {
     console.log('body', body, param, query);
     // response = 'hello world';
-    return this.appService.root();
+    return this.appService.getList(param);
   }
 
   @Post()
   async create(@Body() createCatDto: CreateCatDto) {
     console.log(333, createCatDto);
-    return {a: 1}
+    return this.appService.getListPost(createCatDto);
   }
 }
