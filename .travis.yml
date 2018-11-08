@@ -1,0 +1,10 @@
+language: node_js
+before_install:
+- openssl aes-256-cbc -K $encrypted_a32d2ed325e5_key -iv $encrypted_a32d2ed325e5_iv
+  -in ali_rsa.enc -out ~\/.ssh/ali_rsa -d
+before_script:
+- npm install
+script:
+- npm run build
+after_success:
+- scp -r ./build/ root@47.52.104.243:~/
