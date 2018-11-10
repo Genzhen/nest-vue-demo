@@ -37,18 +37,20 @@ $ npm install
 ## Running the app
 
 ```bash
-# development
+# 后端+前端静态
 $ npm run start
 
-# watch mode
+# 后端+前端动态
 $ npm run start:dev
 
-# incremental rebuild (webpack)
-$ npm run webpack
-$ npm run start:hmr
+# 纯前端动态
+$ npm run start:client
 
-# production mode
-$ npm run start:prod
+# 前端打包
+$ npm run build
+
+# 前端+后端打包
+$ npm run webpack
 ```
 
 ## Test
