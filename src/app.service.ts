@@ -8,7 +8,7 @@ function requestInfo (path, req, method) {
     const requestBaseInfo = {  
         hostname:'192.168.0.32',  
         port: 5000,  
-        method: req || 'POST',
+        method: method || 'POST',
         path,
         headers:{  
             "Content-Type": 'application/json' 
