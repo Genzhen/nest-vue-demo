@@ -1,12 +1,13 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
-import router from './router.js';
 import App from './App.vue';
-
-Vue.use(VueRouter);
-
+import 'jquery';
+import axios from 'axios';
+Vue.prototype.axios = axios;
 new Vue({
+    el: "#app",
+    // render:h=>h(App)
     template: '<App/>',
-    router,
-    components: { App }
-}).$mount('#app');
+    components: {
+        App
+    }
+})
